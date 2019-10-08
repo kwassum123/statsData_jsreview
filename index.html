@@ -1,0 +1,78 @@
+<html>
+  <body>
+    <h1>JavaScript for B1</h1>
+    <pre>
+      var gettestgrade =function (test)
+    {
+        return test.grade
+    }
+    var testmean = function (penguin)
+    {
+        var testgrades = penguin.test.map(gettestgrade)
+        return d3.mean (testgrades)
+    }
+    var gethwgrade = function (homework)
+    {
+        return homework.grade
+    }
+     var hwmean = function(penguin)
+    {
+        var hwgrades = penguin.homework.map(gethwgrade)
+        return d3.mean (hwgrades)
+    }
+    var givepenguinmean = function (penguin) 
+    {
+        var grades= penguin.quizes.map(getGrade)
+        return d3.mean (grades)
+    }
+     var total = function (penguin)
+    {
+        penguin.final.grade * .35 + meanTests(penguin) * .3 +givepenguinmean(penguin) * .2 + meanHW(penguin) *.15;
+    }
+    var picandtotal = function (penguin)
+    {
+        var penguintotal = []
+        penguintotal.picture = penguin.picture;
+        penguintotal.totalgrade = total(penguin);
+    }
+    var answer=picandtotal;
+    </pre>
+    <p>What this mess of code does is retrieves the grades for each assignment type and finds their respective means. Then with those
+    mean grades is calculates the total grade for the penguin as a weighted mean, using the given percentages. It then creates an array
+    and puts within that array the picture of the penguin and the output of its respective total grade function.</p>
+    <h1>JavaScript for C1<h1>
+    <pre>
+      var quiz1grades = []
+        quiz1grades.push (classroom[0].quizes[0].grade);
+        quiz1grades.push (classroom[1].quizes[0].grade);
+        quiz1grades.push  (classroom[2].quizes[0].grade);
+        quiz1grades.push  (classroom[3].quizes[0].grade);
+        quiz1grades.push  (classroom[4].quizes[0].grade);
+        quiz1grades.push  (classroom[5].quizes[0].grade);
+        quiz1grades.push  (classroom[6].quizes[0].grade);
+        quiz1grades.push  (classroom[7].quizes[0].grade);
+        quiz1grades.push  (classroom[8].quizes[0].grade);
+        quiz1grades.push  (classroom[9].quizes[0].grade);
+        quiz1grades.push  (classroom[10].quizes[0].grade);
+        quiz1grades.push  (classroom[11].quizes[0].grade);
+        quiz1grades.push  (classroom[12].quizes[0].grade);
+        quiz1grades.push  (classroom[13].quizes[0].grade);
+        quiz1grades.push  (classroom[14].quizes[0].grade);
+        quiz1grades.push  (classroom[15].quizes[0].grade);
+        quiz1grades.push  (classroom[16].quizes[0].grade);
+        quiz1grades.push  (classroom[17].quizes[0].grade);
+        quiz1grades.push  (classroom[18].quizes[0].grade);
+        quiz1grades.push  (classroom[19].quizes[0].grade);
+        quiz1grades.push  (classroom[20].quizes[0].grade);
+        quiz1grades.push  (classroom[21].quizes[0].grade);
+        quiz1grades.push  (classroom[22].quizes[0].grade);
+        //there has to be a better way but I couldn't figure out the mapping on this one.
+    var firstquizmean = function (quiz)
+    {
+         d3.mean (quiz1grades)
+    }
+    </pre>
+    <p> This code creates an array and pushes all of the grades for the first quiz into it. It then takes all of the values within the
+    array and finds the mean. As you may notice I couldn't get the map function to just map out the quiz grades for the first quiz.</p>
+  </body>
+</html>
